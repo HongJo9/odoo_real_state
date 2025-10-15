@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Acción -->
+    <record id="action_mi_biblioteca_category" model="ir.actions.act_window">
+        <field name="name">Categorías</field>
+        <field name="res_model">mi_biblioteca.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Sub menú Categorías -->
+    <menuitem id="menu_mi_biblioteca_categories" name="Categorías" parent="menu_biblioteca_root"
+        action="action_mi_biblioteca_category" sequence="30" />
+
+    <!-- vista lista -->
+    <record id="view_mi_biblioteca_category_tree" model="ir.ui.view">
+        <field name="name">mi_biblioteca.category.tree</field>
+        <field name="model">mi_biblioteca.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="libro_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- vista formulario -->
+    <record id="view_mi_biblioteca_category_form" model="ir.ui.view">
+        <field name="name">mi_biblioteca.category.form</field>
+        <field name="model">mi_biblioteca.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name" />
+                    <field name="libro_ids" widget="many2many_tags" />
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,16 @@
+<odoo>
+    <!-- Menu Raiz -->
+    <menuitem id="menu_shop_manager_root" name="Shop Manager" sequence="10"/>
+
+        <!-- Accion para abrir productos -->
+    <record id="action_shop_product" model="ir.actions.act_window">
+        <field name="name">Productos</field>
+        <field name="res_model">shop.product</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_shop_product_tree"/>
+        <field name="search_view_id" ref="view_shop_product_search"/>
+    </record>
+
+    <!-- SubMenu para productos -->
+    <menuitem id="menu_shop_products" name="Productos" parent="menu_shop_manager_root" action="action_shop_product" sequence="10"/>
+</odoo>

@@ -1,0 +1,49 @@
+<odoo>
+    <record id="action_lugar_de_trabajo" model="ir.actions.act_window">
+        <field name="name">Lugares de Trabajo</field>
+        <field name="res_model">lugar.de.trabajo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_lugar_de_trabajo" name="Lugares de Trabajo para profesores"
+        parent="menu_teacher_root"
+        sequence="30"
+        action="action_lugar_de_trabajo" />
+
+    <!-- vista lista lugar de trabajo -->
+    <record id="view_lugar_de_trabajo_tree" model="ir.ui.view">
+        <field name="name">lugar.de.trabajo.tree</field>
+        <field name="model">lugar.de.trabajo</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Lugares de Trabajo">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- vista de formulario lugar de trabajo -->
+    <record id="view_lugar_de_trabajo_form" model="ir.ui.view">
+        <field name="name">lugar.de.trabajo.form</field>
+        <field name="model">lugar.de.trabajo</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de Lugar de Trabajo">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- vista de search lugar de trabajo -->
+    <record id="view_lugar_de_trabajo_search" model="ir.ui.view">
+        <field name="name">lugar.de.trabajo.search</field>
+        <field name="model">lugar.de.trabajo</field>
+        <field name="arch" type="xml">
+            <search string="Búsqueda de Lugares de Trabajo">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+</odoo>

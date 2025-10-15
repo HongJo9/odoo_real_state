@@ -1,0 +1,49 @@
+<odoo>
+    <record id="action_nivel_academico" model="ir.actions.act_window">
+        <field name="name">Niveles Académicos</field>
+        <field name="res_model">nivel.academico</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- submenu nivel academico -->
+    <menuitem id="menu_nivel_academico" name="Niveles Académicos" parent="menu_teacher_root"
+        sequence="20"
+        action="action_nivel_academico" />
+    
+    <!-- vista lista nivel academico -->
+    <record id="view_nivel_academico_tree" model="ir.ui.view">
+        <field name="name">nivel.academico.tree</field>
+        <field name="model">nivel.academico</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Niveles Académicos">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- vista de formulario nivel academico -->
+    <record id="view_nivel_academico_form" model="ir.ui.view">
+        <field name="name">nivel.academico.form</field>
+        <field name="model">nivel.academico</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de Nivel Académico">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- vista de search nivel academico -->
+    <record id="view_nivel_academico_search" model="ir.ui.view">
+        <field name="name">nivel.academico.search</field>
+        <field name="model">nivel.academico</field>
+        <field name="arch" type="xml">
+            <search string="Búsqueda de Niveles Académicos">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+</odoo>

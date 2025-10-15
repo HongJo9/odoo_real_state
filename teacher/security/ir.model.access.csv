@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_teacher_user,access_teacher_user,model_teacher,base.group_user,1,0,0,0
+access_teacher_admin,access_teacher_admin,model_teacher,base.group_system,1,1,1,1
+
+access_nivel_academico_user,access_nivel_academico_user,model_nivel_academico,base.group_user,1,0,0,0
+access_nivel_academico_admin,access_nivel_academico_admin,model_nivel_academico,base.group_system,1,1,1,1
+
+access_lugar_de_trabajo_user,access_lugar_de_trabajo_user,model_lugar_de_trabajo,base.group_user,1,0,0,0
+access_lugar_de_trabajo_admin,access_lugar_de_trabajo_admin,model_lugar_de_trabajo,base.group_system,1,1,1,1
+
+access_universidad_user,access_universidad_user,model_universidad,base.group_user,1,0,0,0
+access_universidad_admin,access_universidad_admin,model_universidad,base.group_system,1,1,1,1

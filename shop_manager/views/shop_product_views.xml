@@ -1,0 +1,49 @@
+<odoo>
+    <!-- Vista de busqueda -->
+     <record id="view_shop_product_search" model="ir.ui.view">
+        <field name="name">shop.product.search</field>
+        <field name="model">shop.product</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Productos">
+                <field name="name"/>
+                <filter name="active_filter" string="Solo activos" domain="[('available','=', True)]"/>
+                <filter name="available_false" string="Agotados" domain="[('available','=', False)]"/>
+            </search>
+        </field>
+     </record>
+
+    <!-- Vista en lista -->
+    <record id="view_shop_product_tree" model="ir.ui.view">
+        <field name="name">shop.product.tree</field>
+        <field name="model">shop.product</field>
+        <field name="arch" type="xml">
+            <tree string="Productos">
+                <field name="name"/>
+                <field name="price"/>
+                <field name="price_with_tax"/>
+                <field name="available"/>
+                <field name="stock"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario -->
+    <record id="view_shop_product_form" model="ir.ui.view">
+        <field name="name">shop.product.form</field>
+        <field name="model">shop.product</field>
+        <field name="arch" type="xml">
+            <form string="Producto">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="price"/>
+                        <field name="price_with_tax" readonly="1"/>
+                        <field name="available"/>
+                        <field name="stock"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,34 @@
+<odoo>
+    <!-- Menú raíz principal -->
+    <menuitem id="estate_menu" name="Estate" sequence="10" />
+
+    <!-- Submenú Advertisements -->
+    <menuitem id="estate_menu_advertisements"
+        name="Advertisements"
+        parent="estate_menu"
+        sequence="10" />
+
+    <!-- Sub sub menús Property que esta dentro de Advertisements -->
+    <menuitem id="estate_menu_property"
+        name="Property"
+        parent="estate_menu_advertisements"
+        action="estate_property_action"
+        sequence="10" />
+
+    <menuitem id="estate_menu_offer" name="Ofertas" parent="estate_menu_advertisements"
+        action="action_estate_property_offer"
+        sequence="20" />
+
+    <!-- submenu settings -->
+    <menuitem id="estate_menu_settings" name="Settings" parent="estate_menu" sequence="20" />
+
+    <!-- Sub sub menús Property que esta dentro de Setting-->
+    <menuitem id="estate_menu_property_type" name="Property Types" parent="estate_menu_settings"
+        action="action_estate_property_type" sequence="10" />
+
+    <!-- submenu settings -->
+    <menuitem id="estate_menu_property_tag" name="Property Tags" parent="estate_menu_settings"
+        action="action_estate_property_tag" sequence="20" />
+
+
+</odoo>

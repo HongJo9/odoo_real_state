@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mi_biblioteca_libro,access_mi_biblioteca_libro,model_mi_biblioteca_libro,base.group_system,1,1,1,1
+access_mi_biblioteca_author,access_mi_biblioteca_author,model_mi_biblioteca_author,base.group_system,1,1,1,1
+access_mi_biblioteca_category,access_mi_biblioteca_category,model_mi_biblioteca_category,base.group_system,1,1,1,1

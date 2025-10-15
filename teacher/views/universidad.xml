@@ -1,0 +1,60 @@
+<odoo>
+    <record id="action_universidad" model="ir.actions.act_window">
+        <field name="name">Universidades</field>
+        <field name="res_model">universidad</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- submenu para universidades -->
+    <menuitem id="menu_universidad" name="Universidades" parent="menu_teacher_root" sequence="40"
+        action="action_universidad" />
+    
+    <!-- vista lista universidad -->
+    <record id="view_universidad_tree" model="ir.ui.view">
+        <field name="name">universidad.tree</field>
+        <field name="model">universidad</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Universidades">
+                <field name="name"/>
+                <field name="direccion"/>
+                <field name="telefono"/>
+                <field name="email"/>
+                <field name="website"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- vistas de formulario universidad -->
+    <record id="view_universidad_form" model="ir.ui.view">
+        <field name="name">universidad.form</field>
+        <field name="model">universidad</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de Universidad">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="direccion"/>
+                        <field name="telefono"/>
+                        <field name="email"/>
+                        <field name="website"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- vista de search universidad -->
+    <record id="view_universidad_search" model="ir.ui.view">
+        <field name="name">universidad.search</field>
+        <field name="model">universidad</field>
+        <field name="arch" type="xml">
+            <search string="Búsqueda de Universidades">
+                <field name="name"/>
+                <field name="direccion"/>
+                <field name="telefono"/>
+                <field name="email"/>
+                <field name="website"/>
+            </search>
+        </field>
+    </record>
+</odoo>

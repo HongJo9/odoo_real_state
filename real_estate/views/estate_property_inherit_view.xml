@@ -1,0 +1,13 @@
+<odoo>
+    <record id="estate_property_inherit_view_form" model="ir.ui.view">
+        <field name="name">estate.property.inherit.form</field>
+        <field name="model">estate.property</field>
+        <field name="inherit_id" ref="estate_property_form_view"/>
+        <field name="arch" type="xml">
+            <!-- ejemplo: insertar desúes del campo 'estate' -->
+             <xpath expr="//field[@name='garden']" position="after">
+                <field name="reserved"/>
+             </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,75 @@
+<odoo> <!-- Inicio del archivo XML de datos de Odoo -->
+    <record id="action_teacher" model="ir.actions.act_window">
+        <field name="name">Profesores</field> <!-- Nombre visible de la acción en la interfaz -->
+        <field name="res_model">teacher</field> <!-- Modelo (objeto) que se abrirá con la acción -->
+        <field name="view_mode">tree,form</field> <!-- Modos de vista a mostrar: lista (tree) y
+        formulario (form) -->
+    </record> <!-- Fin del registro de la acción -->
+
+    <!-- menú raíz -->
+    <menuitem id="menu_teacher_root"
+        name="Gestión de Profesores"
+        sequence="10" />
+
+    <!-- SubMenu Profesores -->
+    <menuitem id="menu_teacher" name="Profesores" parent="menu_teacher_root" sequence="10" action="action_teacher"/>
+
+    <!-- vista lista -->
+    <record id="view_teacher_tree" model="ir.ui.view">
+        <field name="name">teacher.tree</field>
+        <field name="model">teacher</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Profesores">
+                <field name="name"/>
+                <field name="edad"/>
+                <field name="asignatura"/>
+                <field name="email"/>
+                <field name="nivel_academico_id"/>
+                <field name="lugar_de_trabajo_id"/>
+                <field name="universidad_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- vista de formulario -->
+    <record id="view_teacher_form" model="ir.ui.view">
+        <field name="name">teacher.form</field>
+        <field name="model">teacher</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de Profesor">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="edad"/>
+                        <field name="asignatura"/>
+                        <field name="email"/>
+                        <field name="nivel_academico_id"/>
+                        <field name="lugar_de_trabajo_id"/>
+                        <field name="universidad_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- vista de search -->
+    <record id="view_teacher_search" model="ir.ui.view">
+        <field name="name">teacher.search</field>
+        <field name="model">teacher</field>
+        <field name="arch" type="xml">
+            <search string="Búsqueda de Profesores">
+                <field name="name"/>
+                <field name="edad"/>
+                <field name="asignatura"/>
+                <field name="email"/>
+                <field name="lugar_de_trabajo_id"/>
+                <field name="universidad_id"/>
+                <group string="Agrupar por">
+                    <filter string="Por Nivel Académico" name="group_by_nivel_academico" context="{'group_by':'nivel_academico_id'}"/>
+                    <filter string="Por universidad" name="group_by_universidad" context="{'group_by':'universidad_id'}"/>
+                    <filter string="Por Lugar de Trabajo" name="group_by_lugar_de_trabajo" context="{'group_by':'lugar_de_trabajo_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo> <!-- Fin del archivo XML -->
