@@ -14,4 +14,6 @@ class EstatePropertyInherit(models.Model):
             record.message_post(body="Nueva propiedad registrada")
         return record
     
+    ###########################################################################
+    
     
