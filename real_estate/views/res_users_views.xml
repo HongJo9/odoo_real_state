@@ -8,12 +8,12 @@
             <notebook position="inside">
                 <page string="Propiedades">
                     <field name="property_ids">
-                        <tree>
+                        <list>
                             <field name="name"/>
                             
                             <field name="expected_price"/>
                             <field name="state"/>
-                        </tree>
+                        </list>
                     </field>
                 </page>
             </notebook>

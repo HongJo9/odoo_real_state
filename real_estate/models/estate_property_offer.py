@@ -55,20 +55,20 @@ class estate_property_offer(models.Model):
                 raise UserError("No se puede rechazar una oferta aceptada")
             self.status = 'refused'
     
-    # -----------------------------------        
     @api.model
     def create(self, vals):
-        property = self.env['estate.property'].browse(vals['property_id'])
+        # Compatibilidad: si Odoo pasa una lista, toma el primer elemento
+        if isinstance(vals, list):
+            vals = vals[0]
 
-        # Buscar la oferta más alta directamente
+        property = self.env['estate.property'].browse(vals['property_id'])
         max_price = max(property.offer_ids.mapped('price'), default=0)
+
         if vals['price'] <= max_price:
             raise UserError(f"No puedes hacer una oferta menor o igual a la existente ({max_price})")
 
-        # Cambiar estado
         property.state = 'offer_received'
 
-        # Crear la oferta
         return super().create(vals)
     
     
