@@ -1,0 +1,27 @@
+<templates>
+    <t t-name="my_owl_new.Content">
+        <section class="d-flex align-items-center justify-content-center min-vh-100 bg-light">
+            <div class="text-center px-4">
+                <h1 class="fw-bold display-5 mb-3 text-primary">Contador con OWL ⚙️</h1>
+                <p class="text-secondary fs-5 mb-4">
+                    Cada vez que se presione el botón, el número aumentará.
+                </p>
+
+                <div class="card shadow-lg border-0 mx-auto" style="max-width: 400px;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3 text-dark fw-semibold">Contador actual:</h5>
+                        <p class="display-4 text-primary fw-bold"><t t-esc="state.count"/></p>
+                        <div class="d-flex gap-3 justify-content-center mt-3">
+                            <button t-on-click="increment" class="btn btn-success fw-semibold px-4">
+                                + Contar
+                            </button>
+                            <button t-on-click="reset" class="btn btn-outline-secondary fw-semibold px-4">
+                                Reiniciar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </t>
+</templates>
