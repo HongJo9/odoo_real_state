@@ -1,24 +1,19 @@
 {
-    'name': 'OWL PORTAL',
+    'name': 'OWL Portal',
     'version': '1.0',
-    'summary': 'Ejemplo de owl portal',
-    'category': 'category',
+    'summary': 'Ejemplo de OWL en el portal',
+    'category': 'Website',
     'author': 'HongJo',
-    'depends': ['base'],
+    'depends': ['base', 'portal', 'web'],  # necesario aunque no lo mencione
     'data': [
-        # Aquí van tus vistas XML si las tienes
-        # 'views/standalone_app.xml',
+        'views/portal_my_home.xml',
     ],
     'assets': {
-        'my_owl_new.assets_standalone_app': [
-            ('include', 'web._assets_helpers'),
-            'web/static/src/scss/pre_variables.scss',
-            'web/static/lib/bootstrap/scss/_variables.scss',
-            ('include', 'web._assets_bootstrap'),
-            ('include', 'web._assets_core'),
-            'my_owl_new/static/src/standalone_app/**/*',
+        'web.assets_frontend': [
+            'owl_portal/static/src/portal_component/**/*',
         ],
     },
     'installable': True,
+    'application': False,
     'auto_install': False,
 }
